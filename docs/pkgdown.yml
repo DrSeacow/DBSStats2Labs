@@ -1,0 +1,8 @@
+pandoc: 2.14.0.3
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  About: About.html
+  Lab2: Lab2.html
+last_built: 2022-02-09T16:33Z
+
