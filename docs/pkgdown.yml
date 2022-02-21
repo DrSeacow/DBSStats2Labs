@@ -3,6 +3,8 @@ pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
   About: About.html
+  Lab1: Lab1.html
   Lab2: Lab2.html
-last_built: 2022-02-09T16:33Z
+  Lab3: Lab3.html
+last_built: 2022-02-21T02:43Z
 

@@ -1,0 +1,15 @@
+---
+title: "Basics_of_R"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+a_vector <- c(1, 8, 3, 8, 3)
+b <- c(9, 2, 5, 3, 4)
+
+dfab <- data.frame(a_vector, b)
+```
