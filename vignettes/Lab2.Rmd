@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(DBSStats2Labs)
 ```
-#  Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
+###  Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
 
 #  Part 1: Generalization Exercise
 ```{r}

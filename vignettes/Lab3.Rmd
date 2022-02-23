@@ -22,7 +22,7 @@ library(DBSStats2Labs)
 #  Today's lab will pertain to multiple regression, orthogonal and non-orthogonal.
 ```
 
-#  Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
+### Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
 
 # PART 1: Generalization Assignment
 ```{r}
