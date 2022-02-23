@@ -10,7 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#"
 )
 ```
 
@@ -18,9 +18,9 @@ knitr::opts_chunk$set(
 library(DBSStats2Labs)
 ```
 
-#> Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
+# Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
 
-#>PART 1: Generalization Assignment
+# PART 1: Generalization Assignment
 ```{r}
 
 library(readxl)
@@ -58,7 +58,9 @@ lab1study
 ```{r}
 
 ```
-#>PART 2: Follow along with exercise
+
+# PART 2: Follow along with exercise
+
 ```{r}
 wide_data <- data.frame(person = 1:5,
                         Morning = c(1, 3, 2, 4, 3),
@@ -179,7 +181,9 @@ count_data
 
 t.test(number_correct~room, var.equal=TRUE, data=count_data)
 ```
-#Linear regression
+
+# Linear regression
+
 ```{r}
 people <- tibble(height = rnorm(100, 90, 10),
                  day = sample(1:31, 100, replace = TRUE))
@@ -190,7 +194,13 @@ lm.out
 
 summary(lm.out)
 ```
-#One-way ANOVA
+
+# One-way ANOVA
+
+## second level header
+
+This is plain text.
+
 ```{r}
 weight_data <- tibble(subject_number = rep(1:25, each = 5*7),
                       day = rep(rep(c("S", "M", "T", "W", "Th", "F", "Sa"),
@@ -207,7 +217,9 @@ subject_means
 aov.out <- aov(mean_weight ~ day, data = subject_means)
 summary(aov.out)
 ```
-#Regression and ANOVA are run similarly
+
+# Regression and ANOVA are run similarly
+
 ```{r}
 subject_means <- weight_data %>%
   group_by(subject_number, day) %>%
@@ -218,7 +230,9 @@ subject_means
 lm.out <- lm(mean_weight ~ day, data = subject_means)
 summary(lm.out)
 ```
-#Factorial ANOVA
+
+# Factorial ANOVA
+
 ```{r}
 weight_data <- tibble(subject_number = rep(1:25, each = 4*7),
                       day = rep(rep(c("S","M","T","W","Th","F","Sa"),
@@ -236,7 +250,9 @@ subject_means
 aov.out <- aov(mean_weight ~ day*time_of_day, data = subject_means)
 summary(aov.out)
 ```
-#Switching from Factorial ANOVA to multiple regression
+
+# Switching from Factorial ANOVA to multiple regression
+
 ```{r}
 subject_means <- weight_data %>% 
   group_by(subject_number, day, time_of_day) %>%

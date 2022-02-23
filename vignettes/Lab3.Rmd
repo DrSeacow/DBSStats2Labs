@@ -10,7 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "# "
 )
 ```
 
@@ -19,15 +19,16 @@ library(DBSStats2Labs)
 ```
 
 ```{r}
-#> Today's lab will pertain to multiple regression, orthogonal and non-orthogonal.
+#  Today's lab will pertain to multiple regression, orthogonal and non-orthogonal.
 ```
 
-#> Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
+#  Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
 
-#>PART 1: Generalization Assignment
+# PART 1: Generalization Assignment
 ```{r}
 #NOTE: Because I'm not quite brilliant enough to creatively think of tutorial tips 100% on my own, I had to consult some online discourse. The links to these web-pages are provided below. Matt- please let me know if this was an acceptable choice. 
 ```
+
 ```{r}
 #When conducting multiple regression analyses, it is crucial that all predictor variables are
 #orthogonal. The "geometric" basis for this concept may obfuscate the straightforwardness of
@@ -74,6 +75,7 @@ library(ibd)
 check.orthogonality(data)
 
 ```
+
 ```{r}
 #This function is very simple. If the function returns a "1," the rows are orthogonal. If it returns "0," they are not. The limitation to this function is that it only checks whether ROWS are PAIRWISE orthogonal or not. The result returned of "0" reaffirms our earlier checking of correlation matrices, which also indicated that the variables are not orthogonal. 
 
@@ -85,7 +87,7 @@ check.orthogonality(data)
 # https://www.rdocumentation.org/packages/ibd/versions/1.5/topics/check.orthogonality
 # https://rdrr.io/cran/ibd/man/check.orthogonality.html
 ```
-#>PART 2: Follow-along with lab demonstration
+# PART 2: Follow-along with lab demonstration
 ```{r}
 #Explaining variance using multiple variables
 random_vectors <- matrix(rnorm(20*26, 0, 1), nrow = 20, ncol = 26)

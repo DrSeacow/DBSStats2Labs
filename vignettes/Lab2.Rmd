@@ -10,18 +10,18 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "# "
 )
 ```
 
 ```{r setup}
 library(DBSStats2Labs)
 ```
-#> Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
+#  Typing manually (as opposed to copy-pasting) helps me remember code better. This webpage will be split into parts 1 (the assignment itself) and 2 (following along with the exercises).
 
-#> Part 1: Generalization Exercise
+#  Part 1: Generalization Exercise
 ```{r}
-#Sample Code:
+# Sample Code:
 library(tibble)
 library(ggplot2)
 slamecka_design <- tibble(number_of_learning_trials = rep(c(2,4,8), each = 6),
@@ -42,11 +42,11 @@ ggplot(slamecka_design, aes(x = number_of_IL,
   geom_point(stat = "summary", fun = "mean")+
   theme_classic()
 
-#original version:
+# original version:
 
 ```
 
-#>Question 1) Make this graph resemble that from textbook fig. 5.5 as closely as possible:
+# Question 1) Make this graph resemble that from textbook fig. 5.5 as closely as possible:
 ```{r}
 
 slamecka_design$number_of_learning_trials <- as.factor(slamecka_design$number_of_learning_trials)
@@ -61,9 +61,9 @@ ggplot(slamecka_design, aes(x = number_of_IL,
   scale_y_continuous(breaks = c(0, 20, 40, 60, 80), limits = c(0,80))+
   scale_x_continuous(breaks = c(2, 4, 8), limits = c(2, 8))
 
-#Struggle-report: I was able to assign the labels and read just which variables were on which axes correctly with minimal help (only slight googling), and figured out the shape differentiation with aes, but once it came to skipping the tick-mark for "6" on the x-axis and splitting the legend to address each line individually (*"splitting the legend" turned out to be something you don't care about, so never-mind on that), I needed to check the solutions video. Let's call this a 6/10. 
+# Struggle-report: I was able to assign the labels and read just which variables were on which axes correctly with minimal help (only slight googling), and figured out the shape differentiation with aes, but once it came to skipping the tick-mark for "6" on the x-axis and splitting the legend to address each line individually (*"splitting the legend" turned out to be something you don't care about, so never-mind on that), I needed to check the solutions video. Let's call this a 6/10. 
 ```
-#>Problem 2: Add a third variable (amount of reward given)
+# Problem 2: Add a third variable (amount of reward given)
 ```{r}
 library(ggplot2)
 library(dplyr)
@@ -95,11 +95,11 @@ ggplot(slamecka_design_modded, aes(x = practice,
   labs(y = "Recall", x = "Amount of Practice")+
                      facet_wrap(~reward)
 
-#Struggle-report: While I think I know in theory how to add the "reward" variable, I don't think it's clear enough from the question exactly how I should be distributing/arranging/counterbalancing it (with "rep") to line up with the data. Trying not to spoil anything else while checking this in the video...Ok, I thought I'd be able to do it but needed to consult the video again. I know it must have something to do with facet-wrapping. 3/10, maaaybe 4/10 on help required here. 
+# Struggle-report: While I think I know in theory how to add the "reward" variable, I don't think it's clear enough from the question exactly how I should be distributing/arranging/counterbalancing it (with "rep") to line up with the data. Trying not to spoil anything else while checking this in the video...Ok, I thought I'd be able to do it but needed to consult the video again. I know it must have something to do with facet-wrapping. 3/10, maaaybe 4/10 on help required here. 
 ```
-#> Part 2: Follow-along with lab demonstration
+#  Part 2: Follow-along with lab demonstration
 ```{r}
-#Unpaired-samples t-test
+# Unpaired-samples t-test
 library(tibble)
 simple_design <- tibble(group = rep(c(0,1), each = 10),
                        DV = c(1, 3, 2, 4, 3, 4, 5, 6, 5, 4, 5, 4, 3, 2, 3, 4, 5, 6, 8, 9))
@@ -114,7 +114,7 @@ ggplot(simple_design, aes(x=group, y=DV))+
 
 t.test(DV~group, var.equal=TRUE, data = simple_design)
 ```
-#> Regression analysis on the same data, and contextualized version
+#  Regression analysis on the same data, and contextualized version
 ```{r}
 lm(DV~group, data=simple_design)
 summary(lm(DV~group, data=simple_design))
@@ -133,7 +133,7 @@ ggplot(recall_design, aes(x=practice, y=recall))+
 
 summary(lm(recall~practice, data = recall_design))
 
-#Making it categorical rather than continuous
+# Making it categorical rather than continuous
 recall_design$practice <- as.factor(recall_design$practice)
 
 ggplot(recall_design, aes(x=practice, y=recall))+
@@ -142,10 +142,10 @@ ggplot(recall_design, aes(x=practice, y=recall))+
   geom_smooth(method = "lm", formula = y~x, se = FALSE)
 
 summary(lm(recall~practice, data = recall_design))
-#The analysis as an ANOVA?
+# The analysis as an ANOVA?
 summary(aov(recall~practice, data = recall_design))
 ```
-#> Copying the Slamecka (1960) Design
+#  Copying the Slamecka (1960) Design
 ```{r}
 slamecka_design <- tibble(number_of_learning_trials = rep(c(2, 4, 8), each = 6),
                           number_of_IL = rep(rep(c(2, 4, 8), 2), 3),
@@ -167,7 +167,7 @@ ggplot(slamecka_design, aes(x=number_of_IL,
   geom_point(stat = "summary", fun = "mean")+
   theme_classic()
 
-#Running the Analysis
+# Running the Analysis
 lm(recall~number_of_learning_trials + number_of_IL, data = slamecka_design)
 summary(lm(recall~number_of_learning_trials + number_of_IL, data = slamecka_design))
 
@@ -187,7 +187,7 @@ ggplot(slamecka_design, aes(x = number_of_learning_trials,
   geom_point(stat = "summary", fun = "mean", aes(shape = number_of_IL))+
   theme_classic()
 
-#Facet-wrapping
+# Facet-wrapping
 ggplot(slamecka_design, aes(x = number_of_learning_trials,
                             y = recall))+
   geom_line(stat = "summary", fun = "mean")+
