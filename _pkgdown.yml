@@ -1,0 +1,25 @@
+template:
+  bootstrap: 3
+  bootswatch: quartz
+  theme: zenburn
+
+navbar:
+ structure:
+   left: [Lab Projects, VR Game Reviews, Blog, Reference]
+   right: [search, github]
+ components:
+   Lab Projects:
+    text: Lab Projects
+    menu:
+    - text: Lab 1 - Long Data
+      href: articles//Lab1.html
+    - text: Lab 2 - Orthogonal Regression
+      href: articles//Lab2.html
+    - text: Lab 3 - Regression 2
+      href: articles//Lab3.html
+   VR Game Reviews:
+    text: VR Game Reviews
+    menu:
+    - text: About
+      href: articles//Aboutreviews.html
+

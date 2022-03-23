@@ -1,0 +1,95 @@
+---
+title: "Lab5a"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Lab5a}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+install.packages(pwr)
+library(pwr)
+```
+
+```{r}
+pwr.anova.test(k = 3,
+               n = 10,
+               f = .2,
+               sig.level = .05,
+               power = )
+```
+
+```{r}
+library(tibble)
+library(ggplot2)
+
+levels <- 4
+n_per_level <- 5
+
+alternative_data <- tibble(subjects = 1:(levels*n_per_level),
+                      IV = as.factor(rep(1:levels, each = n_per_level)),
+                      DV = c(rnorm(n_per_level, 125, 25),
+                             rnorm(n_per_level, 100, 25),
+                             rnorm(n_per_level, 100, 25),
+                             rnorm(n_per_level, 100, 25)
+                             )
+                      )
+
+save_altF_values <- length(1000)
+for(i in 1:1000){
+alternative_data <- tibble(subjects = 1:(levels*n_per_level),
+                      IV = as.factor(rep(1:levels, each = n_per_level)),
+                      DV = c(rnorm(n_per_level, 125, 25),
+                             rnorm(n_per_level, 100, 25),
+                             rnorm(n_per_level, 100, 25),
+                             rnorm(n_per_level, 100, 25)
+                             )
+                      )
+aov.out <- aov(DV ~ IV, data = alternative_data)
+simulated_F <- summary(aov.out)[[1]]$`F value`[1]
+save_altF_values[i] <- simulated_F
+}
+
+F_comparison <- tibble(type = rep(c("null","alternative"), each = 1000), 
+                        F_value = c(rf(1000,3,16),save_altF_values))
+
+ggplot(F_comparison, aes(x=F_value))+
+  geom_histogram(bins=100)+
+  facet_wrap(~type, nrow=2)
+
+{
+  aov.out <- aov(DV ~ IV, data = alternative_data)
+summary_out <- summary(aov.out)
+eta <-eta_squared(aov.out, partial = FALSE)
+return(eta$Eta2)
+}
+
+
+library(effectsize)
+
+eta_squared(aov.out)
+
+
+eta <-eta_squared(aov.out, partial = FALSE)
+
+```
+
+```{r}
+make_a_function <- function(){
+  return(1)
+}
+
+make_a_function()
+```
+
+```{r setup}
+library(DBSStats2Labs)
+```
