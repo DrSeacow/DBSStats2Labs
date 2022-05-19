@@ -6,7 +6,14 @@ articles:
   Aboutreviews: Aboutreviews.html
   BasicsOfR: BasicsOfR/BasicsOfR.html
   Lab1: Lab1.html
+  Lab10_NestedDesigns: Lab10_NestedDesigns.html
   Lab2: Lab2.html
   Lab3: Lab3.html
-last_built: 2022-02-28T16:50Z
+  Lab4_ANOVA: Lab4_ANOVA.html
+  Lab5a: Lab5a.html
+  Lab6_Orth&NonOrthContrasts: Lab6_Orth&NonOrthContrasts.html
+  Lab7_FactorialAnova: Lab7_FactorialAnova.html
+  Lab8_FactorialAnova_Pt2_w_Contrasts: Lab8_FactorialAnova_Pt2_w_Contrasts.html
+  Lab9_RMAnova: Lab9_RMAnova.html
+last_built: 2022-05-19T02:46Z
 
