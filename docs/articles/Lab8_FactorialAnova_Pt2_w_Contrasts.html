@@ -55,6 +55,27 @@
     <li>
       <a href="../articles//Lab3.html">Lab 3 - Regression 2</a>
     </li>
+    <li>
+      <a href="../articles//Lab4_ANOVA.html">Lab 4 - ANOVA Intro</a>
+    </li>
+    <li>
+      <a href="../articles//Lab5a.html">Lab 5 - F Simulations</a>
+    </li>
+    <li>
+      <a href="../articles//Lab6_Orth&amp;NonOrthContrasts.html">Lab 6 - Contrast Analysis</a>
+    </li>
+    <li>
+      <a href="../articles//Lab7_FactorialAnova.html">Lab 7 - Factorial ANOVA</a>
+    </li>
+    <li>
+      <a href="../articles//Lab8_FactorialAnova_Pt2_w_Contrasts.html">Lab 8 - Factorial ANOVA with Contrasts</a>
+    </li>
+    <li>
+      <a href="../articles//Lab9_RMAnova.html">Lab 9 - Repeated-Measures ANOVA</a>
+    </li>
+    <li>
+      <a href="../articles//Lab10_NestedDesigns.html">Lab 10 - Nested Designs</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -157,11 +178,11 @@
 <span class="op">}</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">A_pvalue</span><span class="op">[</span><span class="va">A_pvalue</span><span class="op">&lt;</span><span class="fl">0.05</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">1000</span>
-<span class="co">#&gt; [1] 0.812</span>
+<span class="co">#&gt; [1] 0.813</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">B_pvalue</span><span class="op">[</span><span class="va">B_pvalue</span><span class="op">&lt;</span><span class="fl">0.05</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">1000</span>
-<span class="co">#&gt; [1] 0.295</span>
+<span class="co">#&gt; [1] 0.29</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">AB_pvalue</span><span class="op">[</span><span class="va">AB_pvalue</span><span class="op">&lt;</span><span class="fl">0.05</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">1000</span>
-<span class="co">#&gt; [1] 0.044</span></code></pre></div>
+<span class="co">#&gt; [1] 0.056</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### At least 33 subjects will be required to possess a power of at least 0.8 in detecting a main effect of A at an alpha of 0.05.</span></code></pre></div>
 </div>
@@ -188,7 +209,7 @@
 <span class="op">}</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">AB_pvalue</span><span class="op">[</span><span class="va">AB_pvalue</span><span class="op">&lt;</span><span class="fl">0.05</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">1000</span>
-<span class="co">#&gt; [1] 0.799</span></code></pre></div>
+<span class="co">#&gt; [1] 0.798</span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### I'm not sure what's going wrong here. As far as I can tell, this simulation should be correct. But it looks like even with 100,000 subjects the power of the interaction would be extremely low (for the sake of your computer processing speed, I put it back to 100).</span>
 
@@ -868,11 +889,11 @@
 <span class="op">}</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">A_pvalue</span><span class="op">[</span><span class="va">A_pvalue</span><span class="op">&lt;</span><span class="fl">0.05</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">1000</span>
-<span class="co">#&gt; [1] 0.861</span>
+<span class="co">#&gt; [1] 0.892</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">B_pvalue</span><span class="op">[</span><span class="va">B_pvalue</span><span class="op">&lt;</span><span class="fl">0.05</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">1000</span>
-<span class="co">#&gt; [1] 0.051</span>
+<span class="co">#&gt; [1] 0.055</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">AB_pvalue</span><span class="op">[</span><span class="va">AB_pvalue</span><span class="op">&lt;</span><span class="fl">0.05</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">1000</span>
-<span class="co">#&gt; [1] 0.05</span></code></pre></div>
+<span class="co">#&gt; [1] 0.053</span></code></pre></div>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">DBSStats2Labs</span><span class="op">)</span></code></pre></div>
 </div>

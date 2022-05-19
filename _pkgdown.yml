@@ -17,6 +17,20 @@ navbar:
       href: articles//Lab2.html
     - text: Lab 3 - Regression 2
       href: articles//Lab3.html
+    - text: Lab 4 - ANOVA Intro
+      href: articles//Lab4_ANOVA.html
+    - text: Lab 5 - F Simulations
+      href: articles//Lab5a.html
+    - text: Lab 6 - Contrast Analysis
+      href: articles//Lab6_Orth&NonOrthContrasts.html
+    - text: Lab 7 - Factorial ANOVA
+      href: articles//Lab7_FactorialAnova.html
+    - text: Lab 8 - Factorial ANOVA with Contrasts
+      href: articles//Lab8_FactorialAnova_Pt2_w_Contrasts.html
+    - text: Lab 9 - Repeated-Measures ANOVA
+      href: articles//Lab9_RMAnova.html
+    - text: Lab 10 - Nested Designs
+      href: articles//Lab10_NestedDesigns.html
    VR Game Reviews:
     text: VR Game Reviews
     menu:
