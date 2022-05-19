@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+## This page primarily serves as a proof-of-concept for certain website customization aspects using Pkgdown. One should not necessarily expect my website (at least this one) to be updated with my actual reviews.
+
 Regrettably, all the review works presented here and all the rights reserved therein are the property of Ryan Ouillete (EIC) and "The VR Grid." This simply serves as a portfolio of the reviews I have completed in the past and the VR games I have experience with.
 
 In my reviews, I aim to be as thorough as humanly possible, systematically documenting every possible pro and con that a given game or piece of equipment might have to offer. This might be off-putting, as they are typically by no means brief and delve into many subtle details. Still, I believe in the value of people's money and not supporting decisions to waste it. 

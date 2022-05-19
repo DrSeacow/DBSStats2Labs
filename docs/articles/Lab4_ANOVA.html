@@ -47,34 +47,34 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles//Lab1.html">Lab 1 - Long Data</a>
+      <a href="../Lab1.html">Lab 1 - Long Data</a>
     </li>
     <li>
-      <a href="../articles//Lab2.html">Lab 2 - Orthogonal Regression</a>
+      <a href="../Lab2.html">Lab 2 - Orthogonal Regression</a>
     </li>
     <li>
-      <a href="../articles//Lab3.html">Lab 3 - Regression 2</a>
+      <a href="../Lab3.html">Lab 3 - Regression 2</a>
     </li>
     <li>
-      <a href="../articles//Lab4_ANOVA.html">Lab 4 - ANOVA Intro</a>
+      <a href="../Lab4_ANOVA.html">Lab 4 - ANOVA Intro</a>
     </li>
     <li>
-      <a href="../articles//Lab5a.html">Lab 5 - F Simulations</a>
+      <a href="../Lab5a.html">Lab 5 - F Simulations</a>
     </li>
     <li>
-      <a href="../articles//Lab6_Orth&amp;NonOrthContrasts.html">Lab 6 - Contrast Analysis</a>
+      <a href="../Lab6_Orth&amp;NonOrthContrasts.html">Lab 6 - Contrast Analysis</a>
     </li>
     <li>
-      <a href="../articles//Lab7_FactorialAnova.html">Lab 7 - Factorial ANOVA</a>
+      <a href="../Lab7_FactorialAnova.html">Lab 7 - Factorial ANOVA</a>
     </li>
     <li>
-      <a href="../articles//Lab8_FactorialAnova_Pt2_w_Contrasts.html">Lab 8 - Factorial ANOVA with Contrasts</a>
+      <a href="../Lab8_FactorialAnova_Pt2_w_Contrasts.html">Lab 8 - Factorial ANOVA with Contrasts</a>
     </li>
     <li>
-      <a href="../articles//Lab9_RMAnova.html">Lab 9 - Repeated-Measures ANOVA</a>
+      <a href="../Lab9_RMAnova.html">Lab 9 - Repeated-Measures ANOVA</a>
     </li>
     <li>
-      <a href="../articles//Lab10_NestedDesigns.html">Lab 10 - Nested Designs</a>
+      <a href="../Lab10_NestedDesigns.html">Lab 10 - Nested Designs</a>
     </li>
   </ul>
 </li>
@@ -86,7 +86,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles//Aboutreviews.html">About</a>
+      <a href="../Aboutreviews.html">About</a>
     </li>
   </ul>
 </li>
@@ -1290,8 +1290,8 @@
 
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">anova.out</span><span class="op">)</span>
 <span class="co">#&gt;             Df Sum Sq Mean Sq F value Pr(&gt;F)</span>
-<span class="co">#&gt; Group        3  19.75   6.583   1.531  0.245</span>
-<span class="co">#&gt; Residuals   16  68.80   4.300</span></code></pre></div>
+<span class="co">#&gt; Group        3  15.35   5.117   1.118  0.371</span>
+<span class="co">#&gt; Residuals   16  73.20   4.575</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -1306,7 +1306,7 @@
 
 <span class="va">SS_total</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">sim_data</span><span class="op">)</span> <span class="op">-</span> <span class="va">sim_data</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="op">)</span>
 <span class="va">SS_total</span>
-<span class="co">#&gt; [1] 22.87489</span>
+<span class="co">#&gt; [1] 14.63394</span>
 
 <span class="va">SS_total_distribution</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">)</span>
 <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1000</span><span class="op">)</span><span class="op">{</span>
@@ -1319,7 +1319,7 @@
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">SS_total_distribution</span><span class="op">)</span>
-<span class="co">#&gt; [1] 18.82091</span>
+<span class="co">#&gt; [1] 18.72619</span>
 
 <span class="va">SS_total_distribution_alt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">)</span>
 <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1000</span><span class="op">)</span><span class="op">{</span>
@@ -1332,7 +1332,7 @@
 <p><img src="Lab4_ANOVA_files/figure-html/unnamed-chunk-17-2.png" width="700"></p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">SS_total_distribution_alt</span><span class="op">)</span>
-<span class="co">#&gt; [1] 33.79589</span>
+<span class="co">#&gt; [1] 33.98205</span>
 
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
 <span class="va">SS_total_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>SS_total <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">SS_total_distribution</span>,
@@ -1476,7 +1476,7 @@
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">save_F_values</span><span class="op">[</span><span class="va">save_F_values</span> <span class="op">&gt;</span> <span class="fl">7.22</span><span class="op">]</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">save_F_values</span><span class="op">)</span>
-<span class="co">#&gt; [1] 0.0025</span></code></pre></div>
+<span class="co">#&gt; [1] 0.0024</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="one-way-anovas-using-the-aov-function">One-Way ANOVAs Using the AOV Function<a class="anchor" aria-label="anchor" href="#one-way-anovas-using-the-aov-function"></a>
