@@ -12,9 +12,9 @@ navbar:
     text: Lab Projects
     menu:
     - text: Lab 1 - Long Data
-      href: articles//Lab1.html
+      href: docs/articles/Lab1.html
     - text: Lab 2 - Orthogonal Regression
-      href: articles//Lab2.html
+      href: docs/articles/Lab2.html
     - text: Lab 3 - Regression 2
       href: articles//Lab3.html
     - text: Lab 4 - ANOVA Intro
