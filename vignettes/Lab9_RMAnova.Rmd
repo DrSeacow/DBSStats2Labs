@@ -136,12 +136,10 @@ learning_place_means <- godden_baddeley %>%
 t.test(mean_recall ~ LearningPlace, paired = TRUE, data = learning_place_means)
 
 Learning_land <- learning_place_means %>%
-  filter(LearningPlace == "On Land") %>% 
-  select(mean_recall)
+  filter(LearningPlace == "On Land") 
 
 Learning_sea <- learning_place_means %>%
-  filter(LearningPlace == "Under Sea") %>%
-  select(mean_recall)
+  filter(LearningPlace == "Under Sea") 
 
 t.test(Learning_land$mean_recall - Learning_sea$mean_recall, mu = 0)
 ```
@@ -157,12 +155,10 @@ testing_place_means <- godden_baddeley %>%
 t.test(mean_recall ~ TestingPlace, paired = TRUE, data = testing_place_means)
 
 Testing_land <- testing_place_means %>%
-  filter(TestingPlace == "On Land") %>% 
-  select(mean_recall)
+  filter(TestingPlace == "On Land") 
 
 Testing_sea <- testing_place_means %>%
-  filter(TestingPlace == "Under Sea") %>%
-  select(mean_recall)
+  filter(TestingPlace == "Under Sea")
 
 t.test(Testing_land$mean_recall - Testing_sea$mean_recall, mu = 0)
 

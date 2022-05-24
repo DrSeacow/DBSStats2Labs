@@ -398,7 +398,7 @@
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="op">)</span>
   
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">type_I_errors</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">/</span><span class="fl">10000</span>
-<span class="co">#&gt; [1] 0.1338</span></code></pre></div>
+<span class="co">#&gt; [1] 0.1355</span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### I'm not sure if I did this one right. But (copypasting and adapting from the in-class exercise component) I technically did not need any guidance from the solutions video. So 100%. </span></code></pre></div>
 </div>
@@ -425,34 +425,32 @@
 <code class="sourceCode R">
 <span class="va">aov_out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov</a></span><span class="op">(</span><span class="va">DV</span> <span class="op">~</span> <span class="va">A</span><span class="op">*</span><span class="va">B</span>, data <span class="op">=</span> <span class="va">factorial_data</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">aov_out</span><span class="op">)</span>
-<span class="co">#&gt;             Df Sum Sq Mean Sq F value Pr(&gt;F)  </span>
-<span class="co">#&gt; A            1  2.286  2.2861   3.816 0.0685 .</span>
-<span class="co">#&gt; B            1  0.000  0.0002   0.000 0.9849  </span>
-<span class="co">#&gt; A:B          1  0.137  0.1374   0.229 0.6385  </span>
-<span class="co">#&gt; Residuals   16  9.585  0.5991                 </span>
-<span class="co">#&gt; ---</span>
-<span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span>
+<span class="co">#&gt;             Df Sum Sq Mean Sq F value Pr(&gt;F)</span>
+<span class="co">#&gt; A            1  0.627  0.6267   0.492  0.493</span>
+<span class="co">#&gt; B            1  0.070  0.0704   0.055  0.817</span>
+<span class="co">#&gt; A:B          1  0.731  0.7306   0.573  0.460</span>
+<span class="co">#&gt; Residuals   16 20.395  1.2747</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/model.tables.html" class="external-link">model.tables</a></span><span class="op">(</span><span class="va">aov_out</span>, type <span class="op">=</span> <span class="st">"means"</span><span class="op">)</span>
 <span class="co">#&gt; Tables of means</span>
 <span class="co">#&gt; Grand mean</span>
-<span class="co">#&gt;             </span>
-<span class="co">#&gt; -0.02571804 </span>
+<span class="co">#&gt;            </span>
+<span class="co">#&gt; -0.1364703 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  A </span>
 <span class="co">#&gt; A</span>
-<span class="co">#&gt;      L1      L2 </span>
-<span class="co">#&gt; -0.3638  0.3124 </span>
+<span class="co">#&gt;       L1       L2 </span>
+<span class="co">#&gt;  0.04054 -0.31348 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  B </span>
 <span class="co">#&gt; B</span>
-<span class="co">#&gt;        L1        L2 </span>
-<span class="co">#&gt; -0.029046 -0.022390 </span>
+<span class="co">#&gt;       L1       L2 </span>
+<span class="co">#&gt; -0.07712 -0.19582 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  A:B </span>
 <span class="co">#&gt;     B</span>
 <span class="co">#&gt; A    L1      L2     </span>
-<span class="co">#&gt;   L1 -0.4500 -0.2776</span>
-<span class="co">#&gt;   L2  0.3919  0.2328</span></code></pre></div>
+<span class="co">#&gt;   L1 -0.0912  0.1723</span>
+<span class="co">#&gt;   L2 -0.0630 -0.5640</span></code></pre></div>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">12</span>
@@ -462,15 +460,15 @@
                          DV <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="fl">2</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov</a></span><span class="op">(</span><span class="va">DV</span> <span class="op">~</span> <span class="va">A</span><span class="op">*</span><span class="va">B</span><span class="op">*</span><span class="va">C</span>, data <span class="op">=</span> <span class="va">factorial_data</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;             Df Sum Sq Mean Sq F value  Pr(&gt;F)   </span>
-<span class="co">#&gt; A            1  1.478   1.478   1.275 0.27550   </span>
-<span class="co">#&gt; B            1  0.158   0.158   0.136 0.71681   </span>
-<span class="co">#&gt; C            1  0.757   0.757   0.653 0.43090   </span>
-<span class="co">#&gt; A:B          1  0.053   0.053   0.046 0.83331   </span>
-<span class="co">#&gt; A:C          1 10.212  10.212   8.811 0.00906 **</span>
-<span class="co">#&gt; B:C          1  0.254   0.254   0.220 0.64569   </span>
-<span class="co">#&gt; A:B:C        1  0.126   0.126   0.109 0.74561   </span>
-<span class="co">#&gt; Residuals   16 18.544   1.159                   </span>
+<span class="co">#&gt;             Df Sum Sq Mean Sq F value Pr(&gt;F)  </span>
+<span class="co">#&gt; A            1  1.714   1.714   1.666 0.2151  </span>
+<span class="co">#&gt; B            1  2.689   2.689   2.614 0.1255  </span>
+<span class="co">#&gt; C            1  0.068   0.068   0.066 0.8006  </span>
+<span class="co">#&gt; A:B          1  0.013   0.013   0.013 0.9120  </span>
+<span class="co">#&gt; A:C          1  0.092   0.092   0.089 0.7689  </span>
+<span class="co">#&gt; B:C          1  3.784   3.784   3.678 0.0732 .</span>
+<span class="co">#&gt; A:B:C        1  2.152   2.152   2.092 0.1674  </span>
+<span class="co">#&gt; Residuals   16 16.461   1.029                 </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></code></pre></div>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
@@ -494,10 +492,10 @@
 <span class="co">#&gt; <span style="color: #949494;"># Groups:   A [2]</span></span>
 <span class="co">#&gt;   A     B     mean_DV</span>
 <span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> A1    B1      0.514</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> A1    B2      0.399</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> A2    B1      0.596</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">4</span> A2    B2      0.803</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> A1    B1     0.249 </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> A1    B2    -<span style="color: #BB0000;">0.036</span><span style="color: #BB0000; text-decoration: underline;">1</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> A2    B1     0.570 </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">4</span> A2    B2     0.249</span>
 
 <span class="va">factorial_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">DV</span>, x<span class="op">=</span><span class="va">A</span>, group <span class="op">=</span> <span class="va">B</span>,fill<span class="op">=</span><span class="va">B</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
@@ -536,32 +534,32 @@
 <span class="va">aov_out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov</a></span><span class="op">(</span><span class="va">DV</span> <span class="op">~</span> <span class="va">A</span><span class="op">*</span><span class="va">B</span>, data <span class="op">=</span> <span class="va">factorial_data</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">aov_out</span><span class="op">)</span>
 <span class="co">#&gt;             Df Sum Sq Mean Sq F value Pr(&gt;F)</span>
-<span class="co">#&gt; A            1  0.295  0.2953   0.357  0.559</span>
-<span class="co">#&gt; B            1  0.011  0.0105   0.013  0.912</span>
-<span class="co">#&gt; A:B          1  0.129  0.1288   0.155  0.699</span>
-<span class="co">#&gt; Residuals   16 13.250  0.8281</span>
+<span class="co">#&gt; A            1  0.460  0.4601   1.832  0.195</span>
+<span class="co">#&gt; B            1  0.457  0.4574   1.821  0.196</span>
+<span class="co">#&gt; A:B          1  0.002  0.0016   0.006  0.937</span>
+<span class="co">#&gt; Residuals   16  4.020  0.2512</span>
 
 <span class="fu"><a href="https://rdrr.io/r/stats/model.tables.html" class="external-link">model.tables</a></span><span class="op">(</span><span class="va">aov_out</span>, type <span class="op">=</span> <span class="st">"means"</span><span class="op">)</span>
 <span class="co">#&gt; Tables of means</span>
 <span class="co">#&gt; Grand mean</span>
 <span class="co">#&gt;           </span>
-<span class="co">#&gt; 0.5781357 </span>
+<span class="co">#&gt; 0.2578856 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  A </span>
 <span class="co">#&gt; A</span>
 <span class="co">#&gt;     A1     A2 </span>
-<span class="co">#&gt; 0.4566 0.6996 </span>
+<span class="co">#&gt; 0.1062 0.4096 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  B </span>
 <span class="co">#&gt; B</span>
 <span class="co">#&gt;     B1     B2 </span>
-<span class="co">#&gt; 0.5552 0.6011 </span>
+<span class="co">#&gt; 0.4091 0.1067 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  A:B </span>
 <span class="co">#&gt;     B</span>
-<span class="co">#&gt; A    B1     B2    </span>
-<span class="co">#&gt;   A1 0.5139 0.3993</span>
-<span class="co">#&gt;   A2 0.5964 0.8028</span></code></pre></div>
+<span class="co">#&gt; A    B1      B2     </span>
+<span class="co">#&gt;   A1  0.2485 -0.0361</span>
+<span class="co">#&gt;   A2  0.5697  0.2494</span></code></pre></div>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">a1b1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">11</span>,<span class="fl">9</span>,<span class="fl">7</span>,<span class="fl">11</span>,<span class="fl">12</span>,<span class="fl">7</span>,<span class="fl">12</span>,<span class="fl">11</span>,<span class="fl">10</span>,<span class="fl">10</span><span class="op">)</span>
@@ -680,7 +678,7 @@
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="op">)</span>
   
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">type_I_errors</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">/</span><span class="fl">10000</span>
-<span class="co">#&gt; [1] 0.1402</span></code></pre></div>
+<span class="co">#&gt; [1] 0.1333</span></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">save_sim</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
@@ -689,14 +687,14 @@
 <span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 x 2</span></span>
 <span class="co">#&gt;   effect type_I_error</span>
 <span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> A            0.055<span style="text-decoration: underline;">4</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> AxB          0.049<span style="text-decoration: underline;">6</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> B            0.051<span style="text-decoration: underline;">2</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> A            0.048<span style="text-decoration: underline;">8</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> AxB          0.047<span style="text-decoration: underline;">6</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> B            0.05</span></code></pre></div>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html" class="external-link">rbinom</a></span><span class="op">(</span><span class="fl">10000</span>,<span class="fl">3</span>,<span class="fl">.05</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">a</span><span class="op">[</span><span class="va">a</span><span class="op">&gt;</span><span class="fl">0</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">10000</span>
-<span class="co">#&gt; [1] 0.1436</span></code></pre></div>
+<span class="co">#&gt; [1] 0.1353</span></code></pre></div>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">DBSStats2Labs</span><span class="op">)</span></code></pre></div>
 </div>
